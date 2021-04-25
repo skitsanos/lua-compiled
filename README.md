@@ -1,11 +1,19 @@
 # lua-compiled
 This example demonstrates how to create executable that runs embedded Lua bytecode
 
+### Why
+
+Sometimes there is a need to decouple the application core from some logic that depends on external factors. For example, you need to generate a segment of application that works on that particular machine only, which is often used, for example, in software licensing.
+
+In the current codebase, we demonstrate how to compile the Lua app into bytecode, wrap that bytecode as something we can embed in C app, and then compile that app into executable, which is more, rather, a loader for our bytecode.
+
+But we could go even further; instead of having that bytecode compiled all together with our app, we could have it somewhere on disk or, even better, remotely.
+
 ### Build tools
 
 To build it you need Xmake, A cross-platform build utility based on Lua, you can grab it from here [https://xmake.io](https://xmake.io) 
 
-Xmake is super easy to use and allows to make insane build scenarios that are impossible to achive in cmake and others.
+Xmake is super easy to use and allows to make insane build scenarios impossible to achieve in Xmake and others.
 
 ### Configuring Xmake.lua
 
